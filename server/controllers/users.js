@@ -32,3 +32,15 @@ export const updateProfile = async (req, res) => {
         res.status(405).json({ message: error.message });
     }
 }
+
+export const updateCurrentPlan = async (req, res) => {
+    const { id: _id } = req.params;
+    const { currentPlan } = req.body;
+
+    try {
+        const updatedProfile = await User.findByIdAndUpdate(_id, { $set: { 'currentPlan': currentPlan } }, { new: true });
+        res.status(200).json(updatedProfile);
+    } catch (error) {
+        res.status(405).json({ message: error.message });
+    }
+}

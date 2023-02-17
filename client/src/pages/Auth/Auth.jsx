@@ -5,6 +5,8 @@ import AboutAuth from './AboutAuth'
 import { signup, login } from '../../actions/auth'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useRef } from 'react'
 
 const Auth = () => {
 
@@ -40,15 +42,27 @@ const Auth = () => {
     }
     else
     {
-      dispatch(login({email,password}, navigate))       
+      dispatch(login({ email, password }, navigate))  
     }
     
-    console.log({name,email,password})
+    //console.log({name,email,password})
   }
+
+
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+
 
   return (
     <section className='auth-section'>
-      { isSignup && <AboutAuth/> }
+      {
+        windowSize.current[0] >= 500 ?
+          <>
+            { isSignup && <AboutAuth/> }
+          </> :
+          <>
+          </>
+      }
+      
       <div className='auth-container-2'>
         {!isSignup && <img src={icon} alt='stack overflow' className='login-logo' />}
         <form onSubmit={handleSubmit}>
@@ -68,7 +82,7 @@ const Auth = () => {
           <label htmlFor='password'>
             <div style={{ display: 'flex', justifyContent:'space-between'}}>
               <h4>Password</h4>
-              {!isSignup && <p style={{ color:'#007ac6', fontSize:'13px'}}>Forgot password?</p>}
+              {!isSignup &&<Link to='/forgot-password'> <p style={{ color:'#007ac6', fontSize:'13px', textDecoration:'none'}}>Forgot password?</p></Link>}
             </div>
             <input type='password' name='password' id='password' onChange={(e) => { setPassword(e.target.value) }}  />
             {isSignup && <p style={{fontSize:'13px'}}>Passwords must contain at least eight characters,<br/> including at least 1 letter and 1 number. </p>}
@@ -96,6 +110,15 @@ const Auth = () => {
           <button type='button' className='handle-switch-btn' onClick={handleSwitch}>{ isSignup ? 'Log In' : 'Sign Up'}</button>
         </p>
       </div>
+      {
+        windowSize.current[0] >= 500 ?
+          <>
+          </> :
+          <>
+            {isSignup && <h1>Join the Stack Overflow community</h1>}
+          </>
+      }
+      
     </section>
   )
 }

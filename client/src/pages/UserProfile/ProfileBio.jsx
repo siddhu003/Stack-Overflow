@@ -2,7 +2,7 @@ import React from 'react'
 
 export const ProfileBio = ({currentProfile}) => {
   return (
-      <div>
+      <div className='tags-bio'>
           <div>
               {
               currentProfile?.tags.length !==0 ? (

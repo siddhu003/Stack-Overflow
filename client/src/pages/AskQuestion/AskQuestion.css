@@ -62,3 +62,26 @@
 {
     background-color: #0086d8;
 }
+
+@media only screen and (max-width: 500px) {
+    .ask-question {
+        width: 100%;
+        padding-left: 10px;
+        justify-content: center;
+    }
+
+    .ask-ques-container h1 {
+        font-size: 20px;
+    }
+
+    .ask-ques-container h4{
+        padding-top: 10px;
+        font-size: 14px;
+    }
+
+    .ask-ques-container input {
+        font-size: 10px;
+    }
+
+
+}

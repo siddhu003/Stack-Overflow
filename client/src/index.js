@@ -16,6 +16,7 @@ const root = createRoot(document.getElementById('root'))
 
 root.render(
   <Provider store={store}>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
    <React.StrictMode>
      <App />
     </React.StrictMode>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const API = axios.create({ baseURL: 'http://localhost:5000' })
+const API = axios.create({ baseURL: 'https://stack-overflow.herokuapp.com' })
+//const API = axios.create({ baseURL: 'http://localhost:5000' })
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('Profile')) {
@@ -23,3 +24,7 @@ export const deleteAnswer = (id, answerId, noOfAnswers) => API.patch(`/answer/de
 
 export const fetchAllUsers = () => API.get('/user/getAllUsers');
 export const updateProfile = (id, updateData) => API.patch(`/user/update/${id}`, updateData);
+export const updateCurrentPlan = (id, updateData) => API.patch(`/user/update/${id}`, updateData);
+
+export const forgotPassword = (email) => API.post('forgot-password', email);
+export const resetPassword = () => API.get('reset-password/:id/:token');

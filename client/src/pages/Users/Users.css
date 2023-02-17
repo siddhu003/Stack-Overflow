@@ -26,3 +26,31 @@
 {
     margin: 0px 10px ;
 }
+
+@media only screen and (max-width: 500px) {
+    .user-list-container {
+        padding: 0px 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .home-container-1
+    {
+        width: 100%;
+    }
+
+    .home-container-2
+    {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .user-profile-link h5 {
+        font-size: 12px;
+    }
+
+    .user-profile-link h3 {
+        font-size: 12px;
+    }
+}

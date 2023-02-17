@@ -152,3 +152,30 @@
     line-height: 18px;
     white-space: pre-line;
 }
+
+@media only screen and (max-width: 500px) {
+    /* .question-details-page 
+    {
+        width: 100%;
+        padding-left: 40px;
+        justify-content: center;
+        display: flex;
+    } */
+    .home-container-1
+    {
+        width: 100%;
+    }
+
+    .home-container-2 {
+        width: 100%;
+    }
+
+    .question-details-page
+    {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+}

@@ -17,3 +17,13 @@ export const updateProfile = (id, updateData) => async (dispatch) => {
         console.log(error)
     }
 }
+
+export const updateCurrentPlan = (id, updateData) => async (dispatch) => {
+    try {
+        const { data } = await api.updateProfile(id, updateData) 
+        dispatch({ type: 'UPDATE_CURRENT_PLAN', payload: data })
+        // console.log(updateData)
+    } catch (error) {
+        console.log(error)
+    }
+}

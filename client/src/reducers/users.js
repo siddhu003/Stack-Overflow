@@ -4,6 +4,8 @@ const usersReducer = (states = [], action) => {
             return action.payload;
         case 'UPDATE_CURRENT_USER':
             return states.map((state) => state._id === action.payload._id ? action.payload : state);
+        case 'UPDATE_CURRENT_PLAN':
+            return states.map((state) => state._id === action.payload._id ? action.payload : state);
         default:
             return states;
     }

@@ -74,3 +74,10 @@
     border-radius: 2px;
     font-size: 12px;
 }
+
+@media only screen and (max-width: 500px) {
+    .right-side-bar {
+        width: 100%;
+        float: left;
+    }
+}

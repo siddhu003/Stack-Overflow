@@ -93,3 +93,62 @@
     background-color: transparent;
     border: none;
 }
+
+@media only screen and (max-width: 500px) {
+    .edit-profile-btn 
+    {
+        padding: 6px 8px;
+        border: solid 1px #7e7e7e;
+        border-radius: 2px;
+        background-color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .edit-profile-btn:hover 
+    {
+        background-color: #f5f9fc;
+    }
+
+    .user-name 
+    {
+        font-size: 12px;
+    }
+
+    .home-container-1
+    {
+        width: 100%;
+    }
+
+    .home-container-2
+    {
+        width: 100%;
+    }
+
+    .user-details-conatiner 
+    {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .tags-bio 
+    {
+        font-size: 12px;
+    }
+
+    .edit-profile
+    {
+        font-size: 12px;
+    }
+
+    .user-submit-btn {
+        padding: 10px 4px;
+        font-size: 12px;
+        background-color: #0a95ff;
+        color: white;
+        border: none;
+        border-radius: 2px;
+        padding-right: 5px;
+    }
+
+}

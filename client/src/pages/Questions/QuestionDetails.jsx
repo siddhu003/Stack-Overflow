@@ -92,7 +92,7 @@ const QuestionDetails = () => {
     const dispatch = useDispatch()
     const location = useLocation()
     //console.log(location)
-    const url = 'http://localhost:3000'
+    const url = 'https://stack-overflow-clone-siddharth.netlify.app'
 
     const handlePostAns = (e,answerLength) => {
         e.preventDefault()

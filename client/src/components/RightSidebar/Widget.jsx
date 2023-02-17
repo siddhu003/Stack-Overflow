@@ -15,7 +15,7 @@ const Widget = () => {
         </div>
         <div className='right-side-bar-div-2'>
         <img src={pen} alt='pen' width='18' />
-          <p>Podcast 374: How valuable is your screen name?</p>
+          <p>Podcast 374: How valuable is your screen name and type ?</p>
         </div>
       </div>
 
@@ -23,7 +23,7 @@ const Widget = () => {
       <div className='right-side-bar-div-1'>
         <div className='right-side-bar-div-2'>
         <img src={comment} alt='pen' width='18' />
-          <p>Review queue workflows-Final release...</p>
+          <p>Review queue workflows-Final release, work in progress ...</p>
         </div>
         <div className='right-side-bar-div-2'>
           <img src={comment} alt='pen' width='18' />

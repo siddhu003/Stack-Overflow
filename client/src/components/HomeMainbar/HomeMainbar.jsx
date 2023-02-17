@@ -110,7 +110,7 @@ const HomeMainbar = () => {
         <button onClick={checkAuth} className='ask-btn'>Ask Question</button>
       </div>
 
-      <div>
+      <div className='questions-list'>
         {
           questionsList.data === null ?
           <h1>Loading...</h1> :

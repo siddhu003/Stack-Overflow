@@ -9,6 +9,7 @@ import moment from 'moment'
 import { useState } from 'react'
 import { EditProfileForm } from './EditProfileForm'
 import { ProfileBio } from './ProfileBio'
+import { useRef } from 'react'
 import './UsersProfile.css'
 
 const UserProfile = () => {
@@ -22,29 +23,73 @@ const UserProfile = () => {
 
     const [Switch, setSwitch] = useState(false)
 
+    const windowSize = useRef([window.innerWidth, window.innerHeight]);
+
   return (
       <div className='home-container-1'>
-          <LeftSidebar />
+          {
+              windowSize.current[0] >= 500 ? 
+                  <>
+                      <LeftSidebar />
+                  </> :
+                  <>
+                      
+                  </>
+          }
+          
           <div className="home-container-2">
               <section>
                   <div className="user-details-conatiner">
                       <div className='user-details'>
-                          <Avatar backgroundColor='purple' color='white' fontSize='50px' px='40px' py='25px'>
-                              {currentProfile?.name.charAt(0).toUpperCase()}
-                          </Avatar>
-                          <div className="user-name">
-                              <h1>{currentProfile.name}</h1>
-                              <p><img src={cake} alt='cake' width='18px' />  Joined {moment(currentProfile?.joinedOn).fromNow()}</p>
-                          </div>
+                          {
+                            windowSize.current[0] >= 500 ? 
+                                <>
+                                    <Avatar backgroundColor='purple' color='white' fontSize='50px' px='40px' py='25px'>
+                                        {currentProfile?.name.charAt(0).toUpperCase()}
+                                      </Avatar>
+                                      
+                                    <div className="user-name">
+                                        <h1>{currentProfile.name}</h1>
+                                        <p><img src={cake} alt='cake' width='18px' />  Joined {moment(currentProfile?.joinedOn).fromNow()}</p>
+                                    </div>
+                                </> :
+                                <>
+                                    <Avatar backgroundColor='purple' color='white' fontSize='30px' px='25px' py='15px'>
+                                        {currentProfile?.name.charAt(0).toUpperCase()}
+                                    </Avatar>
+                                      
+                                    <div className="user-name">
+                                        <h1>{currentProfile.name}</h1>
+                                        <p><img src={cake} alt='cake' width='12px' />  Joined {moment(currentProfile?.joinedOn).fromNow()}</p>
+                                    </div>
+                                </>
+                          }
                           
                       </div>
+
                       {
-                        currentUser?.result._id === id && (
-                            <button type='button' onClick={() => setSwitch(true)} className='edit-profile-btn'>
-                                <img src={pen} alt='pen' width='18px' />Edit Profile
-                            </button>
-                        )
-                      }
+                        windowSize.current[0] >= 500 ? 
+                            <>
+                                {
+                                    currentUser?.result._id === id && (
+                                        <button type='button' onClick={() => setSwitch(true)} className='edit-profile-btn'>
+                                            <img src={pen} alt='pen' width='18px' />Edit Profile
+                                        </button>
+                                    )
+                                }
+                            </> :
+                            <>
+                                {
+                                    currentUser?.result._id === id && (
+                                        <button type='button' onClick={() => setSwitch(true)} className='edit-profile-btn'>
+                                            <img src={pen} alt='pen' width='12px' />Edit Profile
+                                        </button>
+                                    )
+                                }
+                            </>
+                    }
+
+                      
                   </div>
                   <>
                       {

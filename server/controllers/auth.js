@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 
 import users from '../models/auth.js'
+//const token = jwt.sign({ email: newUser.email, id: newUser._id }, process.env.JWT_SECRET, { expiresIn: '1hr' });
 
 export const signup = async (req, res) => {
     const { name, email, password } = req.body;
@@ -47,4 +48,31 @@ export const login = async (req, res) => {
     {
         res.status(500).json("Something went wrong...")
     }
+}
+
+export const forgotPassword = async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const oldUser = await users.findOne({ email });
+
+        if (!oldUser)
+        {
+            return res.status(404).json({message:"User doesn't exist."})
+        }
+
+        const secret = JWT_SECRET + oldUser.password;
+        const token = jwt.login({ email: oldUser.email, id: oldUser._id }, secret, { expiresIn: '5m' });
+
+        const link = `https://stack-overflow.herokuapp.com/reset-password/${oldUser._id}/${token}`;
+        console.log(link)
+
+    } catch (error) {
+        
+    }
+}
+
+export const resetPassword = async (req, res) => {
+    const { id, token } = req.params;
+    console.log(req.params);
 }

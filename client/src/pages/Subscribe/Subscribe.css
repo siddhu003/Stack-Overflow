@@ -1,0 +1,110 @@
+.home-1
+{
+    margin: 70px 175px;
+}
+
+.home-1 h1, .plan .plan-top h2
+{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan
+{
+    width: 300px;
+    height: 450px;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 20px;
+    /*background-color: white;*/
+    box-shadow: 0 10px 25px rgb(0 0 0 / 5%),
+    0 20px 48px rgb(0 0 0/ 5%),
+    0 1px 4px rgb(0 0 0/10%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+.plan:nth-of-type(1){
+    margin-right: 30px;
+}
+.plan:nth-of-type(3){
+    margin-left: 30px;
+}
+.all-plans
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.muted{
+    color: rgb(128, 128, 128);
+    margin-top: 0;
+}
+.label{
+    padding: 3%;
+    width: 33px;
+    text-align: center;
+    /*background: rgb(196, 164, 164);*/
+    background-color: #e28847;
+    border-radius: 4px;
+}
+
+.plan-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.btn{
+    
+    margin-bottom: 50px;
+    background: #ffa600;
+    font-size: larger;
+    border-radius: 10px;
+    padding: 8px 20px;
+    width: 240px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background-color: #ef8236;
+}
+
+h4{
+    margin: 0;
+    padding: 0;
+}
+.plan-top{
+    max-height: 180px;
+}
+.pin{
+    margin-bottom: 50px;
+}
+h6{
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.compare-btn
+{
+    color: white;
+    background-color: #2a2d6e;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.compare-btn:hover
+{
+    background-color: #181a3f;
+}

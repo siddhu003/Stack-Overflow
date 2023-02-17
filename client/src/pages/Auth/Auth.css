@@ -96,3 +96,37 @@
     font-size: 13px;
     cursor: pointer;
   }
+
+
+  @media only screen and (max-width: 500px) {
+   .auth-section {
+      font-size: 15px;
+      display: flex;
+      float: center;
+      flex-direction: column-reverse;
+      margin-top: 100px;
+   }
+
+   .auth-section h1 {
+      text-align: center;
+   }
+
+   .auth-container-1 {
+      justify-content: center;
+      padding-left: 35px;
+   }
+
+   .auth-container-2 {
+      font-size: 15px;
+      padding-bottom: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .auth-container-2 form
+   {
+      padding: 16px;
+      font-size: 15px;
+   }
+  }

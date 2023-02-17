@@ -45,3 +45,42 @@
     color: #323232;
     line-height: 17px;
 }
+
+@media only screen and (max-width: 500px) {
+    .tags-list-container {
+        padding: 30px 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 5px;
+    }
+
+    .home-container-1
+    {
+        width: 100%;
+    }
+
+    .home-container-2
+    {
+        width: 100%;
+    }
+
+    .tags-h1
+    {
+        font-size: 25px;
+    }
+
+    .tags-p
+    {
+        font-size: 12px;
+    }
+
+    .tag h5
+    {
+        font-size: 12px;
+    }
+
+    .tag p 
+    {
+        font-size: 12px;
+    }
+}
